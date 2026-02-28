@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FormSnap – Canguru Digital</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #1a1a2e;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: white; }
+    nav .sep { color: #444; }
+
+    hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+    }
+    .app-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #5046e4, #7c73f5);
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 32px rgba(80,70,228,0.4);
+    }
+    hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.75rem; }
+    hero p { color: #aaa; font-size: 1.1rem; max-width: 400px; line-height: 1.6; margin-bottom: 2.5rem; }
+
+    .badge {
+      background: rgba(80,70,228,0.2);
+      border: 1px solid rgba(80,70,228,0.5);
+      color: #a89ff5;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 2rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 2rem 4rem;
+    }
+    .link-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 1.75rem 2.5rem;
+      text-decoration: none;
+      color: white;
+      transition: background 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 180px;
+      flex: 1;
+      max-width: 260px;
+    }
+    .link-card:hover {
+      background: rgba(255,255,255,0.13);
+      transform: translateY(-2px);
+    }
+    .link-icon { font-size: 2rem; }
+    .link-card h2 { font-size: 1.1rem; font-weight: 700; }
+    .link-card p { color: #888; font-size: 0.85rem; text-align: center; line-height: 1.4; }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 2rem;
+      color: #444;
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { color: #888; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Canguru Digital</a>
+    <span class="sep"> / </span>
+    <a href="/formsnap/">FormSnap</a>
+  </nav>
+
+  <hero>
+    <div class="app-icon">📋</div>
+    <span class="badge">Available on iOS</span>
+    <h1>FormSnap</h1>
+    <p>Scan paper forms and contact sheets, extract information automatically, and export to spreadsheets in seconds.</p>
+  </hero>
+
+  <div class="links">
+    <a class="link-card" href="/formsnap/support/">
+      <div class="link-icon">🛟</div>
+      <h2>Support</h2>
+      <p>Get help, read FAQs, or contact our team</p>
+    </a>
+    <a class="link-card" href="/formsnap/privacy/">
+      <div class="link-icon">🔒</div>
+      <h2>Privacy Policy</h2>
+      <p>How we collect, use, and protect your data</p>
+    </a>
+  </div>
+
+  <footer>
+    © 2026 <a href="/">Canguru Digital</a>. All rights reserved.
+  </footer>
+
+</body>
+</html>

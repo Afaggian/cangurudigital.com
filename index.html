@@ -18,30 +18,73 @@
       text-align: center;
       padding: 2rem;
     }
+    .logo {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
     h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    p { color: #aaa; font-size: 1.1rem; margin-bottom: 2rem; }
-    .apps { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .tagline { color: #aaa; font-size: 1.1rem; margin-bottom: 3rem; }
+    .section-title {
+      color: #666;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .apps { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
     .app-card {
-      background: rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 1.5rem 2rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
       text-decoration: none;
       color: white;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 200px;
     }
-    .app-card:hover { background: rgba(255,255,255,0.15); }
-    .app-card h2 { font-size: 1.2rem; }
-    .app-card p { color: #bbb; font-size: 0.9rem; margin: 0; }
+    .app-card:hover {
+      background: rgba(255,255,255,0.13);
+      transform: translateY(-2px);
+    }
+    .app-icon { font-size: 2.5rem; }
+    .app-card h2 { font-size: 1.25rem; font-weight: 700; }
+    .app-card p { color: #aaa; font-size: 0.88rem; line-height: 1.4; }
+    .badge {
+      background: #5046e4;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+    }
+    footer {
+      margin-top: 4rem;
+      color: #444;
+      font-size: 0.8rem;
+    }
   </style>
 </head>
 <body>
+  <div class="logo">🦘</div>
   <h1>Canguru Digital</h1>
-  <p>We build useful apps.</p>
+  <p class="tagline">We build useful apps.</p>
+
+  <p class="section-title">Our Apps</p>
   <div class="apps">
-    <a class="app-card" href="/formsnap/support/">
+    <a class="app-card" href="/formsnap/">
+      <div class="app-icon">📋</div>
       <h2>FormSnap</h2>
-      <p>Form scanning & contact export</p>
+      <p>Scan forms, extract contacts,<br>export to spreadsheets</p>
+      <span class="badge">iOS</span>
     </a>
   </div>
+
+  <footer>© 2026 Canguru Digital</footer>
 </body>
 </html>
