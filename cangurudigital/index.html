@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canguru Digital</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #1a1a2e;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    p { color: #aaa; font-size: 1.1rem; margin-bottom: 2rem; }
+    .apps { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .app-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      text-decoration: none;
+      color: white;
+      transition: background 0.2s;
+    }
+    .app-card:hover { background: rgba(255,255,255,0.15); }
+    .app-card h2 { font-size: 1.2rem; }
+    .app-card p { color: #bbb; font-size: 0.9rem; margin: 0; }
+  </style>
+</head>
+<body>
+  <h1>Canguru Digital</h1>
+  <p>We build useful apps.</p>
+  <div class="apps">
+    <a class="app-card" href="/formsnap/support/">
+      <h2>FormSnap</h2>
+      <p>Form scanning & contact export</p>
+    </a>
+  </div>
+</body>
+</html>
