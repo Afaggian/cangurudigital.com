@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5046e4"/>
+      <stop offset="100%" style="stop-color:#7c73f5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon circle -->
+  <circle cx="100" cy="100" r="85" fill="#1a1a2e"/>
+
+  <!-- Simplified kangaroo silhouette -->
+  <!-- Body -->
+  <path d="M115 55 C115 55, 135 48, 140 62 C145 78, 143 95, 140 115 C137 130, 125 148, 118 160 L105 160 C108 148, 115 130, 117 115 C119 98, 116 80, 115 70 Z" fill="url(#g1)"/>
+  <!-- Head -->
+  <ellipse cx="134" cy="53" rx="16" ry="19" fill="url(#g1)"/>
+  <!-- Ear -->
+  <path d="M142 37 C144 27, 152 24, 154 33 C155 38, 149 42, 146 41 Z" fill="url(#g1)"/>
+  <path d="M130 40 C128 30, 133 24, 136 33 C137 38, 133 42, 131 40 Z" fill="url(#g1)"/>
+  <!-- Eye -->
+  <circle cx="139" cy="50" r="2.5" fill="white"/>
+  <circle cx="139.8" cy="49.5" r="1.2" fill="#1a1a2e"/>
+  <!-- Snout -->
+  <ellipse cx="146" cy="57" rx="5" ry="4" fill="#6358e8"/>
+  <ellipse cx="146" cy="56" rx="2.2" ry="1.5" fill="#1a1a2e"/>
+  <!-- Pouch screen -->
+  <rect x="107" y="112" rx="2" ry="2" width="16" height="12" fill="#1a1a2e" stroke="#5046e4" stroke-width="1.2"/>
+  <line x1="110" y1="116" x2="118" y2="116" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="110" y1="120" x2="120" y2="120" stroke="#7c73f5" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Tail -->
+  <path d="M108 145 C95 148, 78 150, 70 143 C63 137, 62 126, 68 120 C72 116, 78 118, 80 123 C82 130, 88 138, 100 140" fill="none" stroke="url(#g1)" stroke-width="8" stroke-linecap="round"/>
+  <!-- Legs -->
+  <path d="M110 152 C107 158, 100 165, 93 168 C89 170, 84 168, 86 165 C90 160, 100 155, 106 150 Z" fill="url(#g1)"/>
+  <path d="M120 152 C123 158, 127 163, 132 165 C135 167, 139 165, 137 162 C133 157, 127 153, 122 150 Z" fill="url(#g1)"/>
+  <!-- Feet -->
+  <ellipse cx="88" cy="168" rx="10" ry="4" fill="url(#g1)"/>
+  <ellipse cx="135" cy="164" rx="9" ry="3.5" fill="url(#g1)"/>
+  <!-- Sparkles -->
+  <rect x="65" y="115" width="4" height="4" rx="1" fill="#3b82f6" opacity="0.5"/>
+  <rect x="150" y="72" width="3.5" height="3.5" rx="1" fill="#7c73f5" opacity="0.4"/>
+
+  <!-- Text: Canguru Digital -->
+  <text x="210" y="92" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif" font-size="52" font-weight="800" fill="white" letter-spacing="-1">Canguru</text>
+  <text x="210" y="140" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif" font-size="52" font-weight="300" fill="#7c73f5" letter-spacing="-0.5">Digital</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#1a1a2e"/>
+
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5046e4"/>
+      <stop offset="100%" style="stop-color:#7c73f5"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#5046e4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Kangaroo body (simplified, modern geometric style) -->
+  <!-- Main body -->
+  <path d="M280 160 C280 160, 320 140, 330 170 C340 200, 340 240, 335 280 C330 320, 310 370, 290 400 L260 400 C270 370, 280 330, 285 290 C290 250, 285 210, 280 190 Z" fill="url(#grad)"/>
+
+  <!-- Head -->
+  <ellipse cx="320" cy="155" rx="38" ry="45" fill="url(#grad)"/>
+
+  <!-- Ear right -->
+  <path d="M340 110 C345 80, 365 70, 370 95 C372 108, 355 120, 345 118 Z" fill="url(#grad)"/>
+  <path d="M345 108 C347 90, 358 85, 361 98 C362 106, 354 112, 349 111 Z" fill="#7c73f5"/>
+
+  <!-- Ear left -->
+  <path d="M305 115 C298 85, 310 68, 320 90 C325 103, 315 118, 308 115 Z" fill="url(#grad)"/>
+  <path d="M310 110 C307 92, 314 82, 319 95 C322 104, 316 112, 313 110 Z" fill="#7c73f5"/>
+
+  <!-- Eye -->
+  <circle cx="330" cy="148" r="6" fill="white"/>
+  <circle cx="332" cy="147" r="3" fill="#1a1a2e"/>
+
+  <!-- Snout -->
+  <ellipse cx="348" cy="162" rx="12" ry="9" fill="#6358e8"/>
+  <ellipse cx="348" cy="160" rx="5" ry="3.5" fill="#1a1a2e"/>
+
+  <!-- Arms -->
+  <path d="M275 220 C260 230, 240 250, 235 270 C232 280, 240 285, 248 278 C256 270, 265 255, 272 240 Z" fill="url(#grad)" opacity="0.9"/>
+
+  <!-- Pouch with digital screen glow -->
+  <ellipse cx="290" cy="310" rx="30" ry="38" fill="#3d38a0" opacity="0.5"/>
+  <ellipse cx="290" cy="305" rx="22" ry="28" fill="#1a1a2e"/>
+
+  <!-- Digital screen in pouch (the "digital" part) -->
+  <rect x="274" y="290" rx="4" ry="4" width="32" height="24" fill="#1a1a2e" stroke="#5046e4" stroke-width="2"/>
+  <!-- Screen content - code/data lines -->
+  <line x1="279" y1="297" x2="295" y2="297" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+  <line x1="279" y1="303" x2="301" y2="303" stroke="#7c73f5" stroke-width="2" stroke-linecap="round"/>
+  <line x1="279" y1="309" x2="289" y2="309" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Legs -->
+  <path d="M270 380 C265 400, 250 420, 235 430 C225 435, 210 432, 215 425 C225 415, 245 395, 255 380 Z" fill="url(#grad)"/>
+  <path d="M295 380 C300 400, 310 415, 320 420 C330 425, 340 420, 335 412 C325 400, 310 390, 300 380 Z" fill="url(#grad)"/>
+
+  <!-- Foot -->
+  <ellipse cx="220" cy="430" rx="25" ry="10" fill="url(#grad)"/>
+  <ellipse cx="330" cy="418" rx="22" ry="9" fill="url(#grad)"/>
+
+  <!-- Tail -->
+  <path d="M265 360 C240 370, 200 380, 175 365 C155 352, 150 325, 165 310 C175 300, 190 305, 195 315 C200 330, 210 345, 240 350" fill="none" stroke="url(#grad)" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- Digital sparkles/pixels -->
+  <rect x="160" y="295" width="8" height="8" rx="2" fill="#3b82f6" opacity="0.6"/>
+  <rect x="145" y="325" width="6" height="6" rx="1" fill="#7c73f5" opacity="0.4"/>
+  <rect x="175" y="270" width="5" height="5" rx="1" fill="#5046e4" opacity="0.5"/>
+  <rect x="350" y="200" width="7" height="7" rx="2" fill="#3b82f6" opacity="0.5"/>
+  <rect x="370" y="230" width="5" height="5" rx="1" fill="#7c73f5" opacity="0.4"/>
+  <rect x="220" y="190" width="6" height="6" rx="1" fill="#5046e4" opacity="0.3"/>
+</svg>
