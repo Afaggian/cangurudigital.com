@@ -1,99 +1,833 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Canguru Digital</title>
+  <title>Canguru Digital — Tecnologia que transforma ideias em produtos reais</title>
+  <meta name="description" content="Criamos aplicativos e websites profissionais para empreendedores e empresas. Veja nossos cases e fale com a gente." />
+  <meta name="keywords" content="desenvolvimento de apps, criação de sites, aplicativos iOS, websites profissionais, Canguru Digital" />
+  <meta name="author" content="Canguru Digital" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Canguru Digital" />
+  <meta property="og:description" content="Criamos aplicativos e websites profissionais para empreendedores e empresas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cangurudigital.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Canguru Digital" />
+  <meta name="twitter:description" content="Criamos aplicativos e websites profissionais para empreendedores e empresas." />
+
+  <link rel="canonical" href="https://cangurudigital.com" />
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f0f1a;
+      --bg2:       #14142a;
+      --bg3:       #1a1a35;
+      --card:      rgba(255,255,255,0.05);
+      --border:    rgba(255,255,255,0.08);
+      --purple:    #5046e4;
+      --purple2:   #7c73f5;
+      --blue:      #3b82f6;
+      --accent:    #a89ff5;
+      --text:      #f0f0f8;
+      --muted:     #8888a8;
+      --radius:    16px;
+      --radius-lg: 24px;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #1a1a2e;
-      color: white;
-      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── Typography ───────────────────────────────────────────── */
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; letter-spacing: -0.02em; }
+    h3 { font-size: 1.2rem; font-weight: 700; }
+    p  { color: var(--muted); line-height: 1.7; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Gradient text ────────────────────────────────────────── */
+    .grad {
+      background: linear-gradient(135deg, var(--purple2), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Layout ───────────────────────────────────────────────── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+
+    /* ── NAV ──────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15,15,26,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
+      justify-content: space-between;
+      height: 64px;
     }
-    .logo {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
     }
-    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .tagline { color: #aaa; font-size: 1.1rem; margin-bottom: 3rem; }
-    .section-title {
-      color: #666;
-      font-size: 0.75rem;
+
+    .nav-logo img { width: 32px; height: 32px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      color: white !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
+      transition: opacity 0.2s, transform 0.2s !important;
     }
-    .apps { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
-    .app-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 2rem 2.5rem;
-      text-decoration: none;
-      color: white;
-      transition: background 0.2s, transform 0.2s;
+
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    #hero {
+      min-height: calc(100vh - 64px);
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 0.75rem;
-      min-width: 200px;
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 0;
     }
-    .app-card:hover {
-      background: rgba(255,255,255,0.13);
+
+    .hero-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(80,70,228,0.18) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(80,70,228,0.15);
+      border: 1px solid rgba(80,70,228,0.35);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero-content h1 { margin-bottom: 1.25rem; }
+
+    .hero-content > p {
+      font-size: 1.15rem;
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 999px;
+      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(80,70,228,0.35);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(80,70,228,0.45);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 999px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
       transform: translateY(-2px);
     }
-    .app-icon { font-size: 2.5rem; }
-    .app-card h2 { font-size: 1.25rem; font-weight: 700; }
-    .app-card p { color: #aaa; font-size: 0.88rem; line-height: 1.4; }
-    .badge {
-      background: #5046e4;
-      color: white;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      letter-spacing: 0.05em;
-    }
-    footer {
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
       margin-top: 4rem;
-      color: #444;
-      font-size: 0.8rem;
+      flex-wrap: wrap;
     }
+
+    .stat { text-align: center; }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple2), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+    /* ── SECTION HEADER ───────────────────────────────────────── */
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .section-header h2 { margin-bottom: 0.75rem; }
+    .section-header p { font-size: 1.05rem; max-width: 520px; margin: 0 auto; }
+
+    /* ── SERVICES ─────────────────────────────────────────────── */
+    #servicos { background: var(--bg2); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(80,70,228,0.4);
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--blue));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, rgba(80,70,228,0.2), rgba(59,130,246,0.2));
+      border: 1px solid rgba(80,70,228,0.25);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-card h3 { margin-bottom: 0.6rem; }
+    .service-card > p { font-size: 0.92rem; margin-bottom: 1.5rem; }
+
+    .service-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .service-list li::before {
+      content: "✓";
+      color: var(--purple2);
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    /* ── CASES ────────────────────────────────────────────────── */
+    #cases { background: var(--bg); }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .case-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .case-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(80,70,228,0.35);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .case-header {
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-logo {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.75rem;
+      flex-shrink: 0;
+    }
+
+    .case-logo.app { background: linear-gradient(135deg, #5046e4, #7c73f5); }
+    .case-logo.web { background: linear-gradient(135deg, #0f766e, #14b8a6); }
+
+    .case-meta h3 { margin-bottom: 0.2rem; }
+    .case-type { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+
+    .case-tag {
+      margin-left: auto;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .tag-live  { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.25); }
+    .tag-store { background: rgba(80,70,228,0.15); color: var(--purple2); border: 1px solid rgba(80,70,228,0.3); }
+
+    .case-body { padding: 1.75rem 2rem 2rem; }
+    .case-body > p { font-size: 0.9rem; margin-bottom: 1.25rem; }
+
+    .case-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+
+    .tech-pill {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.65rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+    }
+
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 1.25rem;
+      transition: gap 0.2s;
+    }
+
+    .case-link:hover { gap: 0.6rem; }
+    .case-link::after { content: "→"; }
+
+    /* ── ABOUT ────────────────────────────────────────────────── */
+    #sobre { background: var(--bg2); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-content > p { margin-bottom: 1.2rem; font-size: 0.97rem; }
+
+    .values-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .value-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      margin-top: 0.45rem;
+      flex-shrink: 0;
+    }
+
+    .value-item p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+    .value-item strong { color: var(--text); }
+
+    .about-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .metric-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .metric-card.span2 {
+      grid-column: span 2;
+      background: linear-gradient(135deg, rgba(80,70,228,0.12), rgba(59,130,246,0.12));
+      border-color: rgba(80,70,228,0.25);
+    }
+
+    .metric-num {
+      font-size: 2.25rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple2), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .metric-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.25rem; }
+
+    /* ── CTA ──────────────────────────────────────────────────── */
+    #contato {
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #contato::before {
+      content: "";
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(80,70,228,0.12) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .cta-box {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-box h2 { margin-bottom: 1rem; }
+    .cta-box > p { margin-bottom: 2.5rem; font-size: 1.05rem; }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .footer-logo img { width: 28px; height: 28px; }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy { color: var(--muted); font-size: 0.82rem; }
+
+    /* ── MOBILE ───────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      section { padding: 3.5rem 0; }
+      .hero-stats { gap: 2rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-visual { order: -1; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    /* ── Animations ───────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
   </style>
 </head>
+
 <body>
-  <div class="logo">🦘</div>
-  <h1>Canguru Digital</h1>
-  <p class="tagline">We build useful apps.</p>
 
-  <p class="section-title">Our Apps</p>
-  <div class="apps">
-    <a class="app-card" href="/formsnap/">
-      <div class="app-icon">📋</div>
-      <h2>FormSnap</h2>
-      <p>Scan forms, extract contacts,<br>export to spreadsheets</p>
-      <span class="badge">iOS</span>
-    </a>
-  </div>
-
-  <footer>
-    <div style="margin-bottom: 1rem;">
-      <a href="/formsnap/" style="color: #888; text-decoration: none; margin: 0 0.5rem;">FormSnap</a>
-      <span style="color: #444;">·</span>
-      <a href="/formsnap/support/" style="color: #888; text-decoration: none; margin: 0 0.5rem;">Support</a>
-      <span style="color: #444;">·</span>
-      <a href="/formsnap/privacy/" style="color: #888; text-decoration: none; margin: 0 0.5rem;">Privacy</a>
+  <!-- ── NAV ───────────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">
+        <img src="/logo.svg" alt="Canguru Digital" />
+        Canguru Digital
+      </a>
+      <ul class="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato" class="nav-cta">Fale conosco</a></li>
+      </ul>
     </div>
-    © 2026 Canguru Digital
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge fade-up">🦘 Canguru Digital</div>
+        <h1 class="fade-up delay-1">
+          Transformamos ideias em<br>
+          <span class="grad">produtos digitais reais</span>
+        </h1>
+        <p class="fade-up delay-2">
+          Desenvolvemos aplicativos e websites profissionais para empreendedores e empresas que querem crescer com tecnologia de verdade.
+        </p>
+        <div class="hero-actions fade-up delay-3">
+          <a href="#contato" class="btn-primary">Começar um projeto</a>
+          <a href="#cases" class="btn-secondary">Ver nossos cases</a>
+        </div>
+        <div class="hero-stats fade-up delay-4">
+          <div class="stat">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Projetos entregues</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Apps próprios</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">iOS</div>
+            <div class="stat-label">App na App Store</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ───────────────────────────────────────────────── -->
+  <section id="servicos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">O que fazemos</span>
+        <h2>Duas frentes, <span class="grad">um só objetivo</span></h2>
+        <p>Do aplicativo ao site, entregamos tecnologia com qualidade e sem complicação.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Aplicativos</h3>
+          <p>Criamos apps para iOS e Android — produtos próprios com potencial de escala ou apps sob medida para o seu negócio.</p>
+          <ul class="service-list">
+            <li>Aplicativos iOS e Android</li>
+            <li>Produtos próprios (SaaS)</li>
+            <li>Apps sob medida para empresas</li>
+            <li>Dashboards e sistemas web</li>
+            <li>Manutenção e evolução contínua</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Websites</h3>
+          <p>Sites profissionais que geram resultado: landing pages, sites institucionais e lojas virtuais otimizados para conversão.</p>
+          <ul class="service-list">
+            <li>Landing pages de alta conversão</li>
+            <li>Sites institucionais</li>
+            <li>E-commerce e lojas virtuais</li>
+            <li>Otimização para busca (SEO)</li>
+            <li>Manutenção mensal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CASES ──────────────────────────────────────────────────── -->
+  <section id="cases">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nosso portfólio</span>
+        <h2>Cases <span class="grad">reais</span></h2>
+        <p>Produtos que construímos e sites que estão gerando resultados para nossos clientes.</p>
+      </div>
+
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-logo app">📋</div>
+            <div class="case-meta">
+              <h3>FormSnap</h3>
+              <span class="case-type">Aplicativo iOS · Produto Próprio</span>
+            </div>
+            <span class="case-tag tag-store">App Store</span>
+          </div>
+          <div class="case-body">
+            <p>App para digitalizar formulários físicos, extrair contatos e exportar dados para planilhas — direto do celular. Desenvolvido 100% pela Canguru Digital e disponível na Apple App Store.</p>
+            <div class="case-tech">
+              <span class="tech-pill">React Native</span>
+              <span class="tech-pill">iOS</span>
+              <span class="tech-pill">Supabase</span>
+              <span class="tech-pill">Expo</span>
+            </div>
+            <a href="/formsnap/" class="case-link">Ver FormSnap</a>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-logo web">🏛️</div>
+            <div class="case-meta">
+              <h3>Nayara Reis Arquitetura</h3>
+              <span class="case-type">Website · Cliente</span>
+            </div>
+            <span class="case-tag tag-live">No ar</span>
+          </div>
+          <div class="case-body">
+            <p>Site profissional para escritório de arquitetura com galeria de projetos, blog de conteúdo e SEO local. Resultado: mais visibilidade e novos clientes por busca orgânica.</p>
+            <div class="case-tech">
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Vercel</span>
+            </div>
+            <a href="https://nayarareisarquitetura.com" target="_blank" rel="noopener" class="case-link">Ver site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ──────────────────────────────────────────────────── -->
+  <section id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-label">Sobre nós</span>
+          <h2 style="margin: 0.75rem 0 1.25rem;">Uma empresa criada para <span class="grad">construir coisas que funcionam</span></h2>
+          <p>A Canguru Digital nasceu da vontade de transformar ideias em produtos digitais reais — sem burocracia, sem enrolação. Somos uma empresa enxuta, com foco total em execução e qualidade.</p>
+          <p>Atuamos em duas frentes: desenvolvemos nossos próprios aplicativos (com o FormSnap já na App Store) e criamos websites e apps sob medida para empreendedores e empresas que querem crescer.</p>
+          <div class="values-list">
+            <div class="value-item">
+              <div class="value-dot"></div>
+              <p><strong>Execução acima de tudo</strong> — entregamos, testamos, melhoramos.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-dot"></div>
+              <p><strong>Parceria genuína</strong> — o sucesso do seu projeto é o nosso.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-dot"></div>
+              <p><strong>Qualidade sem complicação</strong> — trabalho bem feito, processo simples.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="metric-card span2">
+            <div style="font-size:2rem; margin-bottom:0.5rem;">🦘</div>
+            <div style="font-size:0.9rem; color: var(--text); font-weight:600; margin-bottom:0.25rem;">Canguru Digital</div>
+            <div class="metric-label">Tecnologia que transforma ideias em produtos reais</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">iOS</div>
+            <div class="metric-label">App na<br>Apple Store</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">2026</div>
+            <div class="metric-label">Em operação<br>e crescendo</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">2</div>
+            <div class="metric-label">Apps próprios<br>em desenvolvimento</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">100%</div>
+            <div class="metric-label">Comprometidos<br>com o resultado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ────────────────────────────────────────────────────── -->
+  <section id="contato">
+    <div class="container">
+      <div class="cta-box">
+        <span class="section-label">Vamos trabalhar juntos</span>
+        <h2 style="margin: 0.75rem 0 1rem;">Tem um projeto em mente?<br><span class="grad">A gente constrói.</span></h2>
+        <p>Seja um app, um site ou uma ideia que ainda está no papel — manda mensagem e a gente conversa sem compromisso.</p>
+        <div class="cta-actions">
+          <a href="mailto:contato@cangurudigital.com" class="btn-primary">
+            ✉️ Enviar e-mail
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="/logo.svg" alt="Canguru Digital" />
+        Canguru Digital
+      </div>
+      <ul class="footer-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="/formsnap/">FormSnap</a></li>
+        <li><a href="/formsnap/support/">Suporte</a></li>
+        <li><a href="/formsnap/privacy/">Privacidade</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Canguru Digital</p>
+    </div>
   </footer>
+
 </body>
 </html>
