@@ -41,7 +41,18 @@ git pull --rebase && git add -A && git commit -m "mensagem" && git push
 
 - **Homepage** (`index.html`): Nav + Hero + Serviços + Cases + Sobre + Contato + Footer
 - **FormSnap** (`/formsnap/`): Landing page do app iOS
+  - `/formsnap/terms/` — Termos de Uso (linked from App Store + paywall)
+  - `/formsnap/privacy/` — Política de Privacidade (linked from App Store + paywall)
+  - `/formsnap/support/` — Página de suporte
+- **Social** (`/social/data-deletion/`): Página de exclusão de dados (requisito Meta)
 - **Contato**: contato@cangurudigital.com
+
+## Preview Local
+
+```bash
+cd /Users/alexfaggian/Projetos/cangurudigital.com
+python3 -m http.server 8080  # → http://localhost:8080
+```
 
 ## Notas
 
