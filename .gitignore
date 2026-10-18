@@ -1,3 +1,21 @@
 .DS_Store
 Thumbs.db
 *.log
+
+# --- Segredos / credenciais: nunca versionar ---
+.env
+.env.*
+*.pem
+*.p8
+*.p12
+*.key
+*.jks
+*.keystore
+serviceAccount*.json
+*-adminsdk-*.json
+credentials*.json
+scratch/
+!.env.example
+!.env.sample
+!.env.*.example
+!.env.*.sample
